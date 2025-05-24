@@ -2,7 +2,7 @@
 
 // 修改导入路径
 import { useChat } from '@ai-sdk/react';
-import { useEffect, useRef, useState,useCallback } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import EastIcon from '@mui/icons-material/East';
 import { useParams } from 'next/navigation';
 import { useQuery } from '@tanstack/react-query';

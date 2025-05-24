@@ -2,7 +2,7 @@
 
 // 修改导入路径
 import { useChat } from '@ai-sdk/react';
-import { useEffect, useRef, useState,useCallback } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import EastIcon from '@mui/icons-material/East';
 import { useParams } from 'next/navigation';
 import { useQuery } from '@tanstack/react-query';
@@ -57,18 +57,6 @@ export default function Page() {
         }
     }, [messages])
 
-    const handleFirstMessage = useCallback(async (model: string) => {
-        if (chat?.data?.title && previousMessages?.data?.length === 0) {
-            await append({
-                role: 'user',
-                content: chat?.data?.title
-            }), {
-                model: model,
-                chat_id: chat_id,
-                chat_user_id: chat?.data?.userId
-            }
-        }
-    }, [chat?.data?.title, previousMessages, append, chat_id, chat?.data?.userId]);
 
     useEffect(()=> {
         setModel(chat?.data?.model)
